@@ -3,7 +3,79 @@
     --secondary: #191C24;
     --light: #6C7293;
     --dark: #000000;
+    --bg-color: #171717;
+    --txt-secondary: #6C7293;
 }
+
+/*** bootstrap 5.1.3 overrides start ***/
+body {
+    font-family: "Roboto", sans-serif;
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 1.5;
+    color: var(--txt-secondary);
+    background-color: var(--bg-color);
+    -webkit-text-size-adjust: 100%;
+}
+
+.container-md {
+    padding: 0;
+}
+
+.bg-secondary {
+    background-color: #191C24 !important
+}
+
+.bg-dark {
+    background-color: #000 !important;
+}
+
+.text-primary {
+    color: #EB1616 !important
+}
+
+.text-light {
+    color: #6C7293 !important;
+}
+
+h1, .h1, h2, .h2, h3, .h3, h4, .h4, h5, .h5, h6, .h6 {
+    margin-top: 0;
+    margin-bottom: .5rem;
+    font-family: "Oswald", sans-serif;
+    font-weight: 600;
+    line-height: 1.2;
+    color: #fff;
+}
+
+.btn-primary {
+    color: #fff;
+    background-color: #EB1616;
+    border-color: #EB1616
+}
+
+.btn-dark {
+    color: #fff;
+    background-color: #000;
+    border-color: #000;
+}
+
+.btn-primary:hover {
+    color: #fff;
+    background-color: #EB1616;
+    border-color: #EB1616
+}
+
+.btn-primary:focus {
+    color: #fff;
+    background-color: #EB1616;
+    border-color: #EB1616;
+    box-shadow: none;
+}
+
+.btn-link {
+    text-decoration: none;
+}
+/*** bootstrap 5.1.3 overrides end ***/
 
 .back-to-top {
     position: fixed;
@@ -82,15 +154,43 @@
     outline: none;
 }
 
-    .navbar .navbar-nav .nav-link:hover,
-    .navbar .navbar-nav .nav-link.active {
-        color: var(--primary);
-    }
+.navbar .navbar-nav .nav-link:hover,
+.navbar .navbar-nav .nav-link.active {
+    color: var(--primary);
+}
 
 .navbar.sticky-top {
     top: -100px;
     transition: .5s;
 }
+
+/*** Hero ***/
+@media (max-width: 600px) {
+    .display-5 {
+        font-size: calc(1.525rem + 0.8vw);
+    }
+}
+
+@media (max-width: 480px) {
+    .hero-content {
+        width: 90%;
+    }
+
+    .display-5 {
+        font-size: calc(1rem + 0.4vw);
+    }
+
+    .p-hero {
+        font-size: 0.6rem;
+    }
+    
+    .btn-signup {
+        font-size: 0.8rem;
+        padding: 0.2rem 0.4rem !important;
+    }
+}
+
+/*** Hero end ***/
 
 @media (max-width: 991.98px) {
     .navbar .navbar-nav .nav-link,
