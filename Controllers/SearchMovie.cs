@@ -1,4 +1,6 @@
-﻿using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Mvc;
+using MovieFinder.Models;
+using MovieFinder.Services;
 
 namespace MovieFinder.Controllers
 {
@@ -6,7 +8,9 @@ namespace MovieFinder.Controllers
     {
         public IActionResult Index()
         {
-            return View();
+            IEnumerable<Movie> model = new MovieService().GetAllMockMovies();
+
+            return View(model);
         }
     }
 }
