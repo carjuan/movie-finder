@@ -1,3 +1,6 @@
+using Microsoft.EntityFrameworkCore;
+using Microsoft.EntityFrameworkCore.SqlServer;
+using MovieFinder.Data;
 using MovieFinder.ConsoleOutDebug;
 namespace MovieFinder;
 
@@ -6,7 +9,11 @@ public class Program
     public static void Main(string[] args)
     {
         var builder = WebApplication.CreateBuilder(args);
+        var configuration = builder.Configuration;
 
+        builder.Services.AddDbContext<MovieFinderDbContext>(
+                option => option.UseSqlServer(configuration.GetConnectionString("LocalDbConnection"))
+        );
         ConsoleDebug.Init();
 
         // Add services to the container.
